@@ -1,0 +1,34 @@
+{
+  "name": "hec-jissho-testscripts",
+  "version": "1.0.0",
+  "description": "総務省IoT実証実験。負荷実験用スクリプト",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "realglobe-Inc/hec-jissho-testscripts",
+  "author": {
+    "name": "Fuji Haruka",
+    "email": "fujiharuka@realglobe.jp",
+    "url": "https://github.com/FujiHaruka"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/realglobe-Inc/hec-jissho-testscripts/issues"
+  },
+  "homepage": "https://github.com/realglobe-Inc/hec-jissho-testscripts#readme",
+  "engines": {
+    "node": ">=7",
+    "npm": ">=3"
+  },
+  "publishConfig": {
+    "registry": "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-local"
+  },
+  "dependencies": {
+    "asleep": "^1.0.3",
+    "co": "^4.6.0",
+    "phantom": "^4.0.0",
+    "sugo-actor": "^4.4.6",
+    "sugo-caller": "^3.0.6"
+  }
+}
