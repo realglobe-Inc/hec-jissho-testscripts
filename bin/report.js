@@ -6,9 +6,11 @@ const {
   URL = 'http://localhost:3000',
   ACTOR_KEY = `qq:reporter:${randInt()}`,
   REPORT_INTERVAL = 1000,
-  REPORT_COUNT = 1000
+  REPORT_COUNT = 1000,
+  SOCKET_IO_PATH = '/jissho3/sugos/report/socket.io'
 } = process.env
 
+const url = require('url')
 const co = require('co')
 const asleep = require('asleep')
 const sugoActor = require('sugo-actor')
@@ -38,9 +40,12 @@ class Report {
 
 co(function * () {
   let reporter = new Module({})
-  let actor = sugoActor(URL, {
+  let {protocol, host} = url.parse(URL)
+  let actor = sugoActor({
+    protocol,
+    host,
     key: ACTOR_KEY,
-    path: '/jissho3/sugos/report/socket.io',
+    path: SOCKET_IO_PATH,
     modules: { reporter }
   })
   yield actor.connect()
@@ -49,11 +54,12 @@ co(function * () {
   debug('Actor key:', ACTOR_KEY)
   debug('Report id: ', report.id)
 
-  let count = REPORT_COUNT
+  let count = Number(REPORT_COUNT)
+  let interval = Number(REPORT_INTERVAL)
   while (count--) {
-    reporter.emit('emergency', report)
+    reporter.emit('emergency', report.info())
     debug(`Emited report ${ACTOR_KEY}`)
-    yield asleep(REPORT_INTERVAL)
+    yield asleep(interval)
   }
   yield actor.disconnect()
 }).catch((err) => console.error(err))
