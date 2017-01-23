@@ -15,7 +15,7 @@ const co = require('co')
 const asleep = require('asleep')
 const sugoActor = require('sugo-actor')
 const { Module } = sugoActor
-const debug = require('debug')('hec:reporter')
+const debug = require('debug')('hec:test:reporter')
 
 class Report {
   constructor () {
