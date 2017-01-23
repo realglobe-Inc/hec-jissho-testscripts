@@ -31,3 +31,7 @@ $ POSTS_PAR_SECOND=1 IMG_SIZE =320x180 ./bin/upload.js &> var/log/upload.log
 ### 3. 閲覧者が大量にいる
 
 + ブラウザ ... 1, 10, 100, 1000
+
+```sh
+$ ./bin/browser.js &> var/log/browser.log
+```

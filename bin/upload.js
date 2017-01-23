@@ -30,7 +30,7 @@ const debug = require('debug')('hec:rest:upload')
 let request = arequest.create({ jar: true })
 let imgPath = join(__dirname, `../misc/img/${IMG_SIZE}.jpg`)
 let pathname = `/jissho3/rest/cameras/${CAMERA_UUID}/photos`
-let createPhoto = (number) => co(function * () {
+let createPhoto = () => co(function * () {
   let { statusCode, body } = yield request({
     url: `${BASE_URL}${pathname}`,
     method: 'POST',
@@ -44,8 +44,8 @@ let createPhoto = (number) => co(function * () {
   if (statusCode !== 201) {
     throw new Error(`Failed to create: ${JSON.stringify(body)} (at: ${pathname}, status code: ${statusCode})`)
   }
-  debug(`Photo uploaded ${number}.`)
-  return body.created
+  let { uuid } = body.created
+  debug(`Photo uploaded ${uuid}.`)
 }).catch(handleError)
 
 // Upload images
@@ -53,7 +53,7 @@ co(function * () {
   let INTERVAL = 1000 / POSTS_PAR_SECOND
   debug(`Start to upload. SIZE: ${IMG_SIZE}`)
   for (let i = 1; i <= COUNT; i++) {
-    createPhoto(i) // Not yield
+    createPhoto() // Not yield
     yield asleep(INTERVAL)
   }
   debug('Finish uploading.')

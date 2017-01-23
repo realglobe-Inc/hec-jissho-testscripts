@@ -19,15 +19,15 @@ const co = require('co')
 const asleep = require('asleep')
 const debug = require('debug')('hec:test:reporter')
 const Report = require('../lib/report')
-const Reporter = require('../lib/reporter')
+const ReportGen = require('../lib/report_gen')
 
 co(function * () {
   for (let i = 0; i < REPORTERS; i++) {
-    let reporter = new Reporter()
-    yield reporter.actor.connect()
+    let {actor, reporter} = new ReportGen()
+    yield actor.connect()
 
     let report = new Report()
-    debug(`REPORT_FULL_ID=${reporter.actor.key}#${report.id}`)
+    debug(`REPORT_FULL_ID=${actor.key}#${report.id}`)
     startEmit(reporter, report) // Not yield
     yield asleep(NEXT_INTERVAL)
   }
@@ -36,9 +36,9 @@ co(function * () {
 function startEmit (reporter, report) {
   return co(function * () {
     for (let i = 0; i < EMIT_COUNT; i++) {
-      reporter.emitter.emit('emergency', report.info())
+      yield asleep(REPORT_INTERVAL) // Server 側で Caller が生成されるのを待つ
+      reporter.emit('emergency', report.info())
       // debug('Emit: ', JSON.stringify(report.info()))
-      yield asleep(REPORT_INTERVAL)
     }
   }).catch(e => console.error(e))
 }
