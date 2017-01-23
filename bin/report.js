@@ -3,15 +3,24 @@
  * 指定された URL に通報する
  */
 const {
-  BASE_URL
+  BASE_URL,
+  SOCKET_IO_PATH
 } = require('../env')
 
 const {
   ACTOR_KEY = `qq:reporter:${randInt()}`,
   REPORT_INTERVAL = 1000,
-  REPORT_COUNT = 1000,
-  SOCKET_IO_PATH = '/jissho3/sugos/report/socket.io'
+  REPORT_COUNT = 1000
 } = process.env
+
+const {
+  MODE
+} = process.env
+
+if (invalidMode(MODE)) {
+  console.error(`Invalid MODE.`)
+  process.exit(1)
+}
 
 const url = require('url')
 const co = require('co')
@@ -70,11 +79,19 @@ co(function * () {
 // --- Functions ---
 
 function randInt () {
-  return Math.floor(Math.random() * 1000000)
+  return Math.floor(Math.random() * 1000000000)
 }
 
 function randLocation () {
   let lat = 35.700275 + Math.random() * 0.01
   let lng = 139.753314 + Math.random() * 0.01
   return [lat, lng, 10.22]
+}
+
+function invalidMode (mode) {
+  let modes = {
+    'connect': true,
+    'one': true
+  }
+  return !modes[mode]
 }
