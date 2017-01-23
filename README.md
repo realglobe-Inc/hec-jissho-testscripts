@@ -21,10 +21,12 @@ $ REPORT_PER_SECOND=1 ./bin/report_disconnect.js &> var/log/report_disconnect.lo
 
 ### 2. 画像が大量に来る
 
-+ 投稿クライアント ... 10, 20, 50, 100
-+ 1秒あたりの画像投稿数 ... 1
++ 1秒あたりの画像投稿数 ... 0.5, 1, 10, 20, 50, 100
 + 画像サイズ ... 320×180, 1280x720, 1920×1080, 4096×2160
 
+```sh
+$ POSTS_PAR_SECOND=1 IMG_SIZE =320x180 ./bin/upload.js &> var/log/upload.log
+```
 
 ### 3. 閲覧者が大量にいる
 

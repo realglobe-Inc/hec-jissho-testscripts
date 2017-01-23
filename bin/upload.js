@@ -3,32 +3,38 @@
  * 画像を投稿する
  */
 const {
-  BASE_URL
+  BASE_URL,
+  CAMERA_TOKEN,
+  CAMERA_UUID
 } = require('../env')
+
 const {
-  COUNT = 100,
-  INTERVAL = 2000,
-  CAMERA_TOKEN = 'b2c7deea-7b51-4cd7-bfc1-09e840063f64',
-  CAMERA_UUID = '35f0c2f6-dc0d-459e-b5b8-c579de229697',
+  // 1秒あたりのPOST回数
+  POSTS_PAR_SECOND = 1,
+  // 画像投稿数
+  COUNT = 1000,
+  // 画像サイズ
   IMG_SIZE = '320x180'
 } = process.env
+
+process.env.DEBUG = 'hec:*'
 
 const co = require('co')
 const fs = require('fs')
 const { join } = require('path')
 const asleep = require('asleep')
 const arequest = require('arequest')
-const debug = require('hec:rest:upload')
+const debug = require('debug')('hec:rest:upload')
 
 // Settings
 let request = arequest.create({ jar: true })
 let imgPath = join(__dirname, `../misc/img/${IMG_SIZE}.jpg`)
-let createPhoto = () => co(function * () {
-  let pathname = `/jissho3/rest/cameras/${CAMERA_UUID}/photos`
+let pathname = `/jissho3/rest/cameras/${CAMERA_UUID}/photos`
+let createPhoto = (number) => co(function * () {
   let { statusCode, body } = yield request({
     url: `${BASE_URL}${pathname}`,
     method: 'POST',
-    formdata: {
+    formData: {
       info: JSON.stringify({}),
       token: CAMERA_TOKEN,
       image: fs.createReadStream(imgPath),
@@ -38,19 +44,22 @@ let createPhoto = () => co(function * () {
   if (statusCode !== 201) {
     throw new Error(`Failed to create: ${JSON.stringify(body)} (at: ${pathname}, status code: ${statusCode})`)
   }
+  debug(`Photo uploaded ${number}.`)
   return body.created
-})
+}).catch(handleError)
 
 // Upload images
 co(function * () {
+  let INTERVAL = 1000 / POSTS_PAR_SECOND
   debug(`Start to upload. SIZE: ${IMG_SIZE}`)
   for (let i = 1; i <= COUNT; i++) {
-    yield createPhoto()
-    debug(`Photo uploaded ${i}.`)
+    createPhoto(i) // Not yield
     yield asleep(INTERVAL)
   }
   debug('Finish uploading.')
-}).catch((err) => {
+}).catch(handleError)
+
+function handleError (err) {
   console.error(err)
   process.exit(1)
-})
+}

@@ -40,5 +40,5 @@ function startEmit (reporter, report) {
       // debug('Emit: ', JSON.stringify(report.info()))
       yield asleep(REPORT_INTERVAL)
     }
-  })
+  }).catch(e => console.error(e))
 }

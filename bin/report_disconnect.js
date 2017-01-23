@@ -33,5 +33,5 @@ function reportOnce () {
     reporter.emitter.emit('emergency', report.info())
     debug(`REPORT_FULL_ID=${reporter.actor.key}#${report.id}`)
     yield reporter.actor.disconnect()
-  })
+  }).catch(e => console.error(e))
 }

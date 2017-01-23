@@ -22,6 +22,14 @@ ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/ansi-styles/-/ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
 
+arequest@^2.0.7:
+  version "2.0.7"
+  resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/arequest/-/arequest-2.0.7.tgz#a40368becd3141b5875c6fea0bf293913d03e3cd"
+  dependencies:
+    argx "^3.0.1"
+    co "^4.6.0"
+    request "^2.74.0"
+
 argx@^3.0.0, argx@^3.0.1:
   version "3.0.2"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/argx/-/argx-3.0.2.tgz#1baa88d160ab6f546b6ece0e07596cc2bb3424a9"
@@ -730,7 +738,7 @@ request-progress@~2.0.1:
   dependencies:
     throttleit "^1.0.0"
 
-request@~2.79.0:
+request@^2.74.0, request@~2.79.0:
   version "2.79.0"
   resolved "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual/request/-/request-2.79.0.tgz#4dfe5bf6be8b8cdc37fcf93e04b65577722710de"
   dependencies:

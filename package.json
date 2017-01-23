@@ -26,6 +26,7 @@
     "registry": "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-local"
   },
   "dependencies": {
+    "arequest": "^2.0.7",
     "asleep": "^1.0.3",
     "co": "^4.6.0",
     "phantom": "^4.0.0",
