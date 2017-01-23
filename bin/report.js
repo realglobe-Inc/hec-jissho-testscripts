@@ -3,7 +3,10 @@
  * 指定された URL に通報する
  */
 const {
-  URL = 'http://localhost:3000',
+  BASE_URL
+} = require('../env')
+
+const {
   ACTOR_KEY = `qq:reporter:${randInt()}`,
   REPORT_INTERVAL = 1000,
   REPORT_COUNT = 1000,
@@ -40,7 +43,7 @@ class Report {
 
 co(function * () {
   let reporter = new Module({})
-  let {protocol, host} = url.parse(URL)
+  let {protocol, host} = url.parse(BASE_URL)
   let actor = sugoActor({
     protocol,
     host,

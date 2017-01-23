@@ -5,11 +5,12 @@
 
 const co = require('co')
 const Phantom = require('phantom')
+const debug = require('debug')
 
 const {
-  URL = 'http://localhost:3000/jissho3/system.html'
-  // URL = `https://edac.online/jissho3/system.html`
-} = process.env
+  BASE_URL
+} = require('../env')
+const URL = BASE_URL + '/system.html'
 
 let phantom
 
@@ -19,6 +20,15 @@ co(function * () {
 
   yield page.property('onConsoleMessage', function (msg, lineNum, sourceId) {
     console.log('CONSOLE', msg)
+    // ここに通報や画像投稿のイベント検知
+    var isReport = msg.startsWith('REPORT:')
+    var isPhoto = msg.startsWith('PHOTO:')
+    if (isReport) {
+
+    }
+    if (isPhoto) {
+
+    }
   })
   yield page.property('onResourceRequested', function (request) {})
   yield page.property('onResourceReceived', function (response) {})
@@ -46,18 +56,11 @@ co(function * () {
     console.log('CONFIRM', msg)
     return true
   })
-  yield page.property('onLoadFinished', function () {})
 
   let status = yield page.open(URL)
   if (status !== 'success') {
     throw new Error(`Status: ${status}`)
   }
-
-  yield page.evaluate(function () {
-    window.setTimeout(function () {
-      console.log(document.getElementsByClassName('header')[0].innerHTML)
-    }, 1000)
-  })
 
   console.log(`Opened ${URL}`)
 }).catch(err => console.error(err))

@@ -3,9 +3,11 @@
  * 画像を投稿する
  */
 const {
+  BASE_URL
+} = require('../env')
+const {
   COUNT = 100,
   INTERVAL = 2000,
-  URL = 'http://localhost:3000',
   CAMERA_TOKEN = 'b2c7deea-7b51-4cd7-bfc1-09e840063f64',
   CAMERA_UUID = '35f0c2f6-dc0d-459e-b5b8-c579de229697',
   IMG_SIZE = '320x180'
@@ -19,16 +21,15 @@ const arequest = require('arequest')
 const debug = require('hec:rest:upload')
 
 // Settings
-const baseUrl = `${URL}/jissho3`
 let request = arequest.create({ jar: true })
 let imgPath = join(__dirname, `../misc/img/${IMG_SIZE}.jpg`)
 let createPhoto = () => co(function * () {
-  let pathname = `/rest/cameras/${CAMERA_UUID}/photos`
+  let pathname = `/jissho3/rest/cameras/${CAMERA_UUID}/photos`
   let { statusCode, body } = yield request({
-    url: `${baseUrl}${pathname}`,
+    url: `${BASE_URL}${pathname}`,
     method: 'POST',
     formdata: {
-      info: JSON.stringify({ foo: 'bar' }),
+      info: JSON.stringify({}),
       token: CAMERA_TOKEN,
       image: fs.createReadStream(imgPath),
       extension: '.jpg'
