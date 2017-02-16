@@ -29,6 +29,7 @@ const debug = require('debug')('hec:rest:upload')
 // Settings
 let request = arequest.create({ jar: true })
 let imgPath = join(__dirname, `../misc/img/${IMG_SIZE}.jpg`)
+let image = fs.readFileSync(imgPath)
 let pathname = `/jissho3/rest/cameras/${CAMERA_UUID}/photos`
 let createPhoto = () => co(function * () {
   let { statusCode, body } = yield request({
@@ -37,7 +38,7 @@ let createPhoto = () => co(function * () {
     formData: {
       info: JSON.stringify({}),
       token: CAMERA_TOKEN,
-      image: fs.createReadStream(imgPath),
+      image,
       extension: '.jpg'
     }
   })
@@ -61,5 +62,4 @@ co(function * () {
 
 function handleError (err) {
   console.error(err)
-  process.exit(1)
 }
