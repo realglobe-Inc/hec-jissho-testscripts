@@ -35,3 +35,11 @@ $ POSTS_PAR_SECOND=1 IMG_SIZE =320x180 ./bin/upload.js &> var/log/upload.log
 ```sh
 $ ./bin/browser.js &> var/log/browser.log
 ```
+
+## 実験後の作業ログ
+
++ logs/ にログを移動
++ nginx log を app-nginx/ に移してファイル名整理
++ app/vmstat.log を app-vmstat/ に移動
++ app/ の中で不要なログファイルを削除(実験が失敗しているものなど) : `bin/evaluate/rm_needless_logs.js`
++ 実験できていない項目を洗い出して再実験 : `bin/evaluate/check.js`
