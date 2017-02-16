@@ -1,24 +1,16 @@
 function parseLine (line) {
   let [time, body, other] = line.split(' GMT ')
-  if (!body) {
-    return {
-      failed: true,
-      type: 'nobody',
-      err: new Error(`Parse line failed 'no body' : ${line}`)
-    }
-  }
   if (other) {
     return {
-      failed: true,
-      type: 'other',
       err: new Error(`Parse line failed 'other': ${line}`)
     }
+  }
+  if (!body) {
+    return {}
   }
   let date = new Date(time + ' GMT')
   if (date.toString() === 'Invalid Date') {
     return {
-      failed: true,
-      type: 'invalid date',
       err: new Error(`Parse line failed 'invalid date': ${line}`)
     }
   }

@@ -42,4 +42,4 @@ $ ./bin/browser.js &> var/log/browser.log
 + nginx log を app-nginx/ に移してファイル名整理
 + app/vmstat.log を app-vmstat/ に移動
 + app/ の中で不要なログファイルを削除(実験が失敗しているものなど) : `bin/evaluate/rm_needless_logs.js`
-+ 実験できていない項目を洗い出して再実験 : `bin/evaluate/check.js`
++ 実験できていない項目を洗い出して再実験した : `bin/evaluate/check.js`
