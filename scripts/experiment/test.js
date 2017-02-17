@@ -245,7 +245,7 @@ function execute () {
   }
   // upload
   {
-    let browsersSet = [1, 10, 50, 100, 150, 200, 500]
+    let browsersSet = [1]
     let postsSet = [1, 10, 20, 50, 100]
     let sizeSet = ['320x180', '1280x720', '1920x1080', '4096x2160']
     for (let browsers of browsersSet) {

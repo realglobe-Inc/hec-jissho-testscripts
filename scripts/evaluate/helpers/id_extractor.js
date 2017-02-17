@@ -33,7 +33,7 @@ const IdExtractor = {
       matcher: reportPattern
     }),
     upload: extractor({
-      test: /hec:rest:upload\sPhoto\suploaded/,
+      test: /hec:rest:upload\sUpload/,
       matcher: photoPattern
     })
   },
