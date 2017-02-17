@@ -12,7 +12,7 @@ const {
   // 1秒あたりのPOST回数
   POSTS_PAR_SECOND = 1,
   // 画像投稿数
-  COUNT = 1000,
+  COUNT = 5000,
   // 画像サイズ
   IMG_SIZE = '320x180'
 } = process.env
@@ -32,6 +32,7 @@ let imgPath = join(__dirname, `../misc/img/${IMG_SIZE}.jpg`)
 let image = fs.readFileSync(imgPath)
 let pathname = `/jissho3/rest/cameras/${CAMERA_UUID}/photos`
 let createPhoto = () => co(function * () {
+  debug(`Upload ${uuid}`)
   let { statusCode, body } = yield request({
     url: `${BASE_URL}${pathname}`,
     method: 'POST',
@@ -43,10 +44,9 @@ let createPhoto = () => co(function * () {
     }
   })
   if (statusCode !== 201) {
-    throw new Error(`Failed to create: ${JSON.stringify(body)} (at: ${pathname}, status code: ${statusCode})`)
+    debug('Failed')
   }
   let { uuid } = body.created
-  debug(`Photo uploaded ${uuid}.`)
 }).catch(handleError)
 
 // Upload images
@@ -57,7 +57,6 @@ co(function * () {
     createPhoto() // Not yield
     yield asleep(INTERVAL)
   }
-  debug('Finish uploading.')
 }).catch(handleError)
 
 function handleError (err) {

@@ -30,9 +30,9 @@ function reportOnce () {
     let {actor, reporter} = new ReportGen()
     yield actor.connect()
     let report = new Report()
+    debug(`REPORT_FULL_ID=${actor.key}#${report.id}`)
     yield asleep(1000) // Server側で caller が生成されるのを待つ
     reporter.emit('emergency', report.info())
-    debug(`REPORT_FULL_ID=${actor.key}#${report.id}`)
     yield actor.disconnect()
   }).catch(e => console.error(e))
 }

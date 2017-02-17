@@ -7,11 +7,9 @@ const { spawn } = require('child_process')
 const { join } = require('path')
 const { BROWSERS = 1 } = process.env
 
-process.chdir(join(__dirname, '..'))
-
 for (let i = 1; i <= BROWSERS; i++) {
   const debug = Debug(`hec:browser:${i}`)
-  const phantom = spawn('./bin/scripts/phantom.js')
+  const phantom = spawn(`node ${join(__dirname, './helpers/phantom.js')}`)
   phantom.stdout.on('data', (data) => {
     debug(data.toString().trim())
   })
