@@ -3,7 +3,7 @@
  * 正しくログが取れているかチェックする
  */
 require('shelljs/global')
-const { Paths, EXPERIMENTS } = require('./helpers/constants.js')
+const { Paths, Experiments } = require('./helpers/constants.js')
 const assert = require('assert')
 const compareSets = require('compare-sets')
 
@@ -17,7 +17,7 @@ const logfileToExperiment = (file) => {
 check()
 
 function check () {
-  let experiments = new Set(EXPERIMENTS)
+  let experiments = new Set(Experiments.ALL)
   let exFromFiles = new Set(ls(Paths.APP[0]).map(logfileToExperiment))
   let {
     added,
