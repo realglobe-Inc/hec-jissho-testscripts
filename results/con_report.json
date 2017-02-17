@@ -1,0 +1,842 @@
+[
+  {
+    "experiment": {
+      "name": "conreport_b_1_r_100",
+      "browser": 1,
+      "reporter": 100
+    },
+    "count": {
+      "all": 100,
+      "success": 100,
+      "fail": 0
+    },
+    "stats": {
+      "len": 100,
+      "mean": 1.96,
+      "max": 8,
+      "min": 1,
+      "median": 1,
+      "stdev": 1.78
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_1_r_200",
+      "browser": 1,
+      "reporter": 200
+    },
+    "count": {
+      "all": 200,
+      "success": 148,
+      "fail": 52
+    },
+    "stats": {
+      "len": 148,
+      "mean": 12.47,
+      "max": 58,
+      "min": 1,
+      "median": 2,
+      "stdev": 16.56
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_1_r_500",
+      "browser": 1,
+      "reporter": 500
+    },
+    "count": {
+      "all": 448,
+      "success": 134,
+      "fail": 314
+    },
+    "stats": {
+      "len": 134,
+      "mean": 11.45,
+      "max": 65,
+      "min": 1,
+      "median": 2,
+      "stdev": 16.25
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_1_r_1000",
+      "browser": 1,
+      "reporter": 1000
+    },
+    "count": {
+      "all": 482,
+      "success": 135,
+      "fail": 347
+    },
+    "stats": {
+      "len": 135,
+      "mean": 11.22,
+      "max": 65,
+      "min": 1,
+      "median": 2,
+      "stdev": 15.73
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_1_r_2000",
+      "browser": 1,
+      "reporter": 2000
+    },
+    "count": {
+      "all": 504,
+      "success": 145,
+      "fail": 359
+    },
+    "stats": {
+      "len": 145,
+      "mean": 12.03,
+      "max": 65,
+      "min": 1,
+      "median": 2,
+      "stdev": 16.43
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_1_r_5000",
+      "browser": 1,
+      "reporter": 5000
+    },
+    "count": {
+      "all": 483,
+      "success": 143,
+      "fail": 340
+    },
+    "stats": {
+      "len": 143,
+      "mean": 11.12,
+      "max": 62,
+      "min": 1,
+      "median": 2,
+      "stdev": 15.35
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_10_r_100",
+      "browser": 10,
+      "reporter": 100
+    },
+    "count": {
+      "all": 100,
+      "success": 100,
+      "fail": 0
+    },
+    "stats": {
+      "len": 100,
+      "mean": 4.09,
+      "max": 16,
+      "min": 1,
+      "median": 1,
+      "stdev": 4.64
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_10_r_200",
+      "browser": 10,
+      "reporter": 200
+    },
+    "count": {
+      "all": 200,
+      "success": 176,
+      "fail": 24
+    },
+    "stats": {
+      "len": 176,
+      "mean": 196.09,
+      "max": 1813,
+      "min": 1,
+      "median": 23,
+      "stdev": 390.33
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_10_r_500",
+      "browser": 10,
+      "reporter": 500
+    },
+    "count": {
+      "all": 378,
+      "success": 112,
+      "fail": 266
+    },
+    "stats": {
+      "len": 112,
+      "mean": 12.09,
+      "max": 66,
+      "min": 1,
+      "median": 3,
+      "stdev": 15.88
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_10_r_1000",
+      "browser": 10,
+      "reporter": 1000
+    },
+    "count": {
+      "all": 388,
+      "success": 108,
+      "fail": 280
+    },
+    "stats": {
+      "len": 108,
+      "mean": 12.22,
+      "max": 62,
+      "min": 1,
+      "median": 3,
+      "stdev": 16.01
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_10_r_2000",
+      "browser": 10,
+      "reporter": 2000
+    },
+    "count": {
+      "all": 395,
+      "success": 112,
+      "fail": 283
+    },
+    "stats": {
+      "len": 112,
+      "mean": 14.89,
+      "max": 67,
+      "min": 1,
+      "median": 5.5,
+      "stdev": 18.42
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_10_r_5000",
+      "browser": 10,
+      "reporter": 5000
+    },
+    "count": {
+      "all": 388,
+      "success": 108,
+      "fail": 280
+    },
+    "stats": {
+      "len": 108,
+      "mean": 13.07,
+      "max": 66,
+      "min": 1,
+      "median": 3.5,
+      "stdev": 16.86
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_50_r_100",
+      "browser": 50,
+      "reporter": 100
+    },
+    "count": {
+      "all": 100,
+      "success": 55,
+      "fail": 45
+    },
+    "stats": {
+      "len": 55,
+      "mean": 21.16,
+      "max": 62,
+      "min": 1,
+      "median": 10,
+      "stdev": 21.22
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_50_r_200",
+      "browser": 50,
+      "reporter": 200
+    },
+    "count": {
+      "all": 183,
+      "success": 55,
+      "fail": 128
+    },
+    "stats": {
+      "len": 55,
+      "mean": 15.09,
+      "max": 66,
+      "min": 1,
+      "median": 4,
+      "stdev": 18.65
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_50_r_500",
+      "browser": 50,
+      "reporter": 500
+    },
+    "count": {
+      "all": 213,
+      "success": 55,
+      "fail": 158
+    },
+    "stats": {
+      "len": 55,
+      "mean": 12.49,
+      "max": 59,
+      "min": 1,
+      "median": 2,
+      "stdev": 16.17
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_50_r_1000",
+      "browser": 50,
+      "reporter": 1000
+    },
+    "count": {
+      "all": 198,
+      "success": 49,
+      "fail": 149
+    },
+    "stats": {
+      "len": 49,
+      "mean": 13.39,
+      "max": 67,
+      "min": 1,
+      "median": 3,
+      "stdev": 17.96
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_50_r_2000",
+      "browser": 50,
+      "reporter": 2000
+    },
+    "count": {
+      "all": 204,
+      "success": 53,
+      "fail": 151
+    },
+    "stats": {
+      "len": 53,
+      "mean": 14.98,
+      "max": 67,
+      "min": 1,
+      "median": 4,
+      "stdev": 19.12
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_50_r_5000",
+      "browser": 50,
+      "reporter": 5000
+    },
+    "count": {
+      "all": 216,
+      "success": 55,
+      "fail": 161
+    },
+    "stats": {
+      "len": 55,
+      "mean": 16.91,
+      "max": 67,
+      "min": 1,
+      "median": 4,
+      "stdev": 20.93
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_100_r_100",
+      "browser": 100,
+      "reporter": 100
+    },
+    "count": {
+      "all": 100,
+      "success": 34,
+      "fail": 66
+    },
+    "stats": {
+      "len": 34,
+      "mean": 15.41,
+      "max": 68,
+      "min": 1,
+      "median": 5,
+      "stdev": 18.89
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_100_r_200",
+      "browser": 100,
+      "reporter": 200
+    },
+    "count": {
+      "all": 76,
+      "success": 45,
+      "fail": 31
+    },
+    "stats": {
+      "len": 45,
+      "mean": 17.91,
+      "max": 53,
+      "min": 1,
+      "median": 7,
+      "stdev": 18.3
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_100_r_500",
+      "browser": 100,
+      "reporter": 500
+    },
+    "count": {
+      "all": 149,
+      "success": 36,
+      "fail": 113
+    },
+    "stats": {
+      "len": 36,
+      "mean": 17.06,
+      "max": 70,
+      "min": 1,
+      "median": 5.5,
+      "stdev": 20.97
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_100_r_1000",
+      "browser": 100,
+      "reporter": 1000
+    },
+    "count": {
+      "all": 164,
+      "success": 39,
+      "fail": 125
+    },
+    "stats": {
+      "len": 39,
+      "mean": 17.15,
+      "max": 69,
+      "min": 1,
+      "median": 5,
+      "stdev": 20.35
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_100_r_2000",
+      "browser": 100,
+      "reporter": 2000
+    },
+    "count": {
+      "all": 138,
+      "success": 31,
+      "fail": 107
+    },
+    "stats": {
+      "len": 31,
+      "mean": 14.84,
+      "max": 67,
+      "min": 1,
+      "median": 5,
+      "stdev": 18.55
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_100_r_5000",
+      "browser": 100,
+      "reporter": 5000
+    },
+    "count": {
+      "all": 156,
+      "success": 37,
+      "fail": 119
+    },
+    "stats": {
+      "len": 37,
+      "mean": 13.78,
+      "max": 66,
+      "min": 1,
+      "median": 3,
+      "stdev": 18.03
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_150_r_100",
+      "browser": 150,
+      "reporter": 100
+    },
+    "count": {
+      "all": 100,
+      "success": 55,
+      "fail": 45
+    },
+    "stats": {
+      "len": 55,
+      "mean": 20.29,
+      "max": 58,
+      "min": 1,
+      "median": 12,
+      "stdev": 18.76
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_150_r_200",
+      "browser": 150,
+      "reporter": 200
+    },
+    "count": {
+      "all": 139,
+      "success": 30,
+      "fail": 109
+    },
+    "stats": {
+      "len": 30,
+      "mean": 20.43,
+      "max": 70,
+      "min": 1,
+      "median": 9.5,
+      "stdev": 22.36
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_150_r_500",
+      "browser": 150,
+      "reporter": 500
+    },
+    "count": {
+      "all": 128,
+      "success": 43,
+      "fail": 85
+    },
+    "stats": {
+      "len": 43,
+      "mean": 19.02,
+      "max": 58,
+      "min": 1,
+      "median": 14,
+      "stdev": 17.72
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_150_r_1000",
+      "browser": 150,
+      "reporter": 1000
+    },
+    "count": {
+      "all": 27,
+      "success": 20,
+      "fail": 7
+    },
+    "stats": {
+      "len": 20,
+      "mean": 6.7,
+      "max": 11,
+      "min": 2,
+      "median": 7,
+      "stdev": 3.32
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_150_r_2000",
+      "browser": 150,
+      "reporter": 2000
+    },
+    "count": {
+      "all": 137,
+      "success": 30,
+      "fail": 107
+    },
+    "stats": {
+      "len": 30,
+      "mean": 18.77,
+      "max": 67,
+      "min": 1,
+      "median": 8,
+      "stdev": 21.02
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_150_r_5000",
+      "browser": 150,
+      "reporter": 5000
+    },
+    "count": {
+      "all": 135,
+      "success": 29,
+      "fail": 106
+    },
+    "stats": {
+      "len": 29,
+      "mean": 20.38,
+      "max": 70,
+      "min": 1,
+      "median": 8,
+      "stdev": 22.64
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_200_r_100",
+      "browser": 200,
+      "reporter": 100
+    },
+    "count": {
+      "all": 62,
+      "success": 21,
+      "fail": 41
+    },
+    "stats": {
+      "len": 21,
+      "mean": 3.29,
+      "max": 12,
+      "min": 1,
+      "median": 2,
+      "stdev": 3.13
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_200_r_200",
+      "browser": 200,
+      "reporter": 200
+    },
+    "count": {
+      "all": 68,
+      "success": 51,
+      "fail": 17
+    },
+    "stats": {
+      "len": 51,
+      "mean": 17.41,
+      "max": 51,
+      "min": 1,
+      "median": 15,
+      "stdev": 12.13
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_200_r_500",
+      "browser": 200,
+      "reporter": 500
+    },
+    "count": {
+      "all": 60,
+      "success": 46,
+      "fail": 14
+    },
+    "stats": {
+      "len": 46,
+      "mean": 14.85,
+      "max": 50,
+      "min": 1,
+      "median": 9.5,
+      "stdev": 13.4
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_200_r_1000",
+      "browser": 200,
+      "reporter": 1000
+    },
+    "count": {
+      "all": 66,
+      "success": 38,
+      "fail": 28
+    },
+    "stats": {
+      "len": 38,
+      "mean": 23.68,
+      "max": 60,
+      "min": 1,
+      "median": 22,
+      "stdev": 17.9
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_200_r_2000",
+      "browser": 200,
+      "reporter": 2000
+    },
+    "count": {
+      "all": 99,
+      "success": 48,
+      "fail": 51
+    },
+    "stats": {
+      "len": 48,
+      "mean": 20.98,
+      "max": 55,
+      "min": 1,
+      "median": 14,
+      "stdev": 16.77
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_200_r_5000",
+      "browser": 200,
+      "reporter": 5000
+    },
+    "count": {
+      "all": 60,
+      "success": 51,
+      "fail": 9
+    },
+    "stats": {
+      "len": 51,
+      "mean": 16.37,
+      "max": 53,
+      "min": 1,
+      "median": 10,
+      "stdev": 14.18
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_500_r_100",
+      "browser": 500,
+      "reporter": 100
+    },
+    "count": {
+      "all": 94,
+      "success": 0,
+      "fail": 94
+    },
+    "stats": {
+      "len": 0,
+      "mean": 0,
+      "max": null,
+      "min": null,
+      "median": 0,
+      "stdev": 0
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_500_r_200",
+      "browser": 500,
+      "reporter": 200
+    },
+    "count": {
+      "all": 113,
+      "success": 3,
+      "fail": 110
+    },
+    "stats": {
+      "len": 3,
+      "mean": 11.33,
+      "max": 13,
+      "min": 8,
+      "median": 13,
+      "stdev": 2.36
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_500_r_500",
+      "browser": 500,
+      "reporter": 500
+    },
+    "count": {
+      "all": 138,
+      "success": 6,
+      "fail": 132
+    },
+    "stats": {
+      "len": 6,
+      "mean": 16.17,
+      "max": 25,
+      "min": 7,
+      "median": 17,
+      "stdev": 6.54
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_500_r_1000",
+      "browser": 500,
+      "reporter": 1000
+    },
+    "count": {
+      "all": 112,
+      "success": 5,
+      "fail": 107
+    },
+    "stats": {
+      "len": 5,
+      "mean": 4.4,
+      "max": 7,
+      "min": 2,
+      "median": 4,
+      "stdev": 1.85
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_500_r_2000",
+      "browser": 500,
+      "reporter": 2000
+    },
+    "count": {
+      "all": 131,
+      "success": 3,
+      "fail": 128
+    },
+    "stats": {
+      "len": 3,
+      "mean": 8.67,
+      "max": 10,
+      "min": 6,
+      "median": 10,
+      "stdev": 1.89
+    }
+  },
+  {
+    "experiment": {
+      "name": "conreport_b_500_r_5000",
+      "browser": 500,
+      "reporter": 5000
+    },
+    "count": {
+      "all": 121,
+      "success": 2,
+      "fail": 119
+    },
+    "stats": {
+      "len": 2,
+      "mean": 3,
+      "max": 4,
+      "min": 2,
+      "median": 3,
+      "stdev": 1
+    }
+  }
+]

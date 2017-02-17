@@ -8,17 +8,70 @@ const co = require('co')
 const fs = require('fs')
 const { join } = require('path')
 const evalReportExperiment = require('./helpers/eval_report_experiment')
+const jsonCsv = require('json-csv')
 
 function evalConAll () {
   return co(function * () {
-    let allResult = {}
-    for (let exp of Experiments.CON_REPORT) {
+    const experiments = Experiments.CON_REPORT
+    const jsonPath = join(__dirname, '../../results/con_report.json')
+    const csvPath = join(__dirname, '../../results/con_report.csv')
+
+    let allResult = []
+    for (let exp of experiments) {
       let result = yield evalReportExperiment(exp)
-      allResult[exp.name] = result
+      allResult.push(result)
     }
-    let filename = join(__dirname, '../../results/con_report.json')
-    let filedata = JSON.stringify(allResult, null, '  ')
-    fs.writeFileSync(filename, filedata)
+
+    let json = JSON.stringify(allResult, null, '  ')
+    fs.writeFileSync(jsonPath, json)
+
+    let csv = yield new Promise((resolve, reject) => {
+      jsonCsv.csvBuffered(allResult, {
+        fields: [
+          {
+            name: 'experiment.reporter',
+            label: '通報クライアント数'
+          },
+          {
+            name: 'experiment.browser',
+            label: 'ブラウザ数'
+          },
+          {
+            name: 'count.all',
+            label: 'クライアント接続試行数'
+          },
+          {
+            name: 'count.success',
+            label: 'クライアント接続成功数'
+          },
+          {
+            name: 'count.fail',
+            label: 'クライアント接続失敗数'
+          },
+          {
+            name: 'stats.mean',
+            label: '平均秒'
+          },
+          {
+            name: 'stats.max',
+            label: '最大秒'
+          },
+          {
+            name: 'stats.min',
+            label: '最小秒'
+          },
+          {
+            name: 'stats.median',
+            label: '中央値'
+          },
+          {
+            name: 'stats.stdev',
+            label: '標準偏差'
+          }
+        ]
+      }, (err, csv) => err ? reject(err) : resolve(csv))
+    })
+    fs.writeFileSync(csvPath, csv)
   })
 }
 

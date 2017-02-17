@@ -1,11 +1,10 @@
 const {
   mean,
   median,
-  mode,
-  variance,
   stdev
 } = require('stats-lite')
-const { round10: round } = require('round10')
+
+const round = (number) => Math.round(100 * number) / 100
 
 /**
  * @param {Array<number>} data
@@ -17,8 +16,6 @@ function stats (data) {
     max: Math.max(...data),
     min: Math.min(...data),
     median: median(data),
-    mode: mode(data),
-    variance: variance(data),
     stdev: stdev(data)
   }
   for (let key of Object.keys(info)) {
