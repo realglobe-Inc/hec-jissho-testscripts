@@ -32,7 +32,8 @@ let imgPath = join(__dirname, `../misc/img/${IMG_SIZE}.jpg`)
 let image = fs.readFileSync(imgPath)
 let pathname = `/jissho3/rest/cameras/${CAMERA_UUID}/photos`
 let createPhoto = () => co(function * () {
-  debug(`Upload ${uuid}`)
+  let id = Math.random().toString(36).slice(-20)
+  debug(`Upload ID=${id}`)
   let { statusCode, body } = yield request({
     url: `${BASE_URL}${pathname}`,
     method: 'POST',
@@ -47,6 +48,7 @@ let createPhoto = () => co(function * () {
     debug('Failed')
   }
   let { uuid } = body.created
+  debug(`Uploaded ID=${id} UUID=${uuid}`)
 }).catch(handleError)
 
 // Upload images
