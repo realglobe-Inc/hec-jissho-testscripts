@@ -51,7 +51,7 @@ const Experiments = {
   ),
   DIS_REPORT: directProduct(
     browsers,
-    reportCons
+    reportSpeeds
   ).map(
     ([browser, reportSpeed]) => ({
       name: `disreport_b_${browser}_r_${reportSpeed}`,

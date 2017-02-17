@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 接続通報実験のログを評価する
+ * 切断する通報実験のログを評価する
  */
 require('shelljs/global')
 const { Experiments } = require('./helpers/constants')
@@ -9,17 +9,17 @@ const fs = require('fs')
 const { join } = require('path')
 const evalReportExperiment = require('./helpers/eval_report_experiment')
 
-function evalConAll () {
+function evalDisAll () {
   return co(function * () {
     let allResult = {}
-    for (let exp of Experiments.CON_REPORT) {
+    for (let exp of Experiments.DIS_REPORT) {
       let result = yield evalReportExperiment(exp)
       allResult[exp.name] = result
     }
-    let filename = join(__dirname, '../../results/con_report.json')
+    let filename = join(__dirname, '../../results/dis_report.json')
     let filedata = JSON.stringify(allResult, null, '  ')
     fs.writeFileSync(filename, filedata)
   })
 }
 
-evalConAll().catch(e => console.error(e))
+evalDisAll().catch(e => console.error(e))
