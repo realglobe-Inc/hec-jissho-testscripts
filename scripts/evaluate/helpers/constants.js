@@ -40,19 +40,34 @@ let sizes = ['320x180', '1280x720', '1920x1080', '4096x2160']
  */
 const Experiments = {
   CON_REPORT: directProduct(
-    browsers, reportSpeeds
+    browsers,
+    reportCons
   ).map(
-    ([b, r]) => `disreport_b_${b}_r_${r}`
+    ([browser, reporter]) => ({
+      name: `conreport_b_${browser}_r_${reporter}`,
+      browser,
+      reporter
+    })
   ),
   DIS_REPORT: directProduct(
-    browsers, reportCons
+    browsers,
+    reportCons
   ).map(
-    ([b, r]) => `conreport_b_${b}_r_${r}`
+    ([browser, reportSpeed]) => ({
+      name: `disreport_b_${browser}_r_${reportSpeed}`,
+      browser,
+      reportSpeed
+    })
   ),
   UPLOAD: directProduct(
-    posts, sizes
+    posts,
+    sizes
   ).map(
-    ([p, s]) => `upload_b_1_p_${p}_s_${s}`
+    ([post, size]) => ({
+      name: `upload_b_1_p_${post}_s_${size}`,
+      post,
+      size
+    })
   )
 }
 Experiments.ALL = (({CON_REPORT, DIS_REPORT, UPLOAD}) =>

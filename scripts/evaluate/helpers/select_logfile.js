@@ -3,12 +3,12 @@ const { Paths } = require('./constants.js')
 
 /**
  * 実験名から app 下のログファイルを出す。複数ある場合には、最もファイルサイズの大きい物を「まともに取れたデータ」と考える
- * @param {string} exp - 実験名
+ * @param {string} expName - 実験名
  * @return {string} ログファイル名
  */
-function selectLogfile (exp) {
+function selectLogfile (expName) {
   const APP_DIR = Paths.APP[0]
-  let filenames = ls(APP_DIR).filter(filename => filename.startsWith(exp + '_'))
+  let filenames = ls(APP_DIR).filter(filename => filename.startsWith(expName + '_'))
   let maxSize = -1
   let resFilename = ''
   let filesizes = exec(`du ${filenames.join(' ')}`, { cwd: APP_DIR, silent: true })

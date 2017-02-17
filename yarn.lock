@@ -540,6 +540,10 @@ isexe@^1.1.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-1.1.2.tgz#36f3e22e60750920f5e7241a476a8c6a42275ad0"
 
+isnumber@~1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/isnumber/-/isnumber-1.0.0.tgz#0e3f9759b581d99dd85086f0ec2a74909cfadd01"
+
 isstream@0.1.x, isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
@@ -792,6 +796,10 @@ resolve@^1.1.6:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.2.0.tgz#9589c3f2f6149d1417a40becc1663db6ec6bc26c"
 
+round10@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/round10/-/round10-1.0.3.tgz#86110f46a10874a1931da7fdd5e06d1857a8e4d0"
+
 sg-check@^1.0.6:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/sg-check/-/sg-check-1.1.5.tgz#dbbfe5a15c56f9c45b6adf3cba2539051f10e8b5"
@@ -905,6 +913,12 @@ sshpk@^1.7.0:
 stack-trace@0.0.x:
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/stack-trace/-/stack-trace-0.0.9.tgz#a8f6eaeca90674c333e7c43953f275b451510695"
+
+stats-lite@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/stats-lite/-/stats-lite-2.0.3.tgz#525f44dad3a0d6d872eb395bfd7bd49668425828"
+  dependencies:
+    isnumber "~1.0.0"
 
 string_decoder@~0.10.x:
   version "0.10.31"

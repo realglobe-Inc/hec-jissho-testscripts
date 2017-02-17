@@ -17,7 +17,7 @@ const logfileToExperiment = (file) => {
 check()
 
 function check () {
-  let experiments = new Set(Experiments.ALL)
+  let experiments = new Set(Experiments.ALL.map(({ name }) => name))
   let exFromFiles = new Set(ls(Paths.APP[0]).map(logfileToExperiment))
   let {
     added,
