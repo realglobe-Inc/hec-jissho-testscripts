@@ -46,6 +46,7 @@ let createPhoto = () => co(function * () {
   })
   if (statusCode !== 201) {
     debug('Failed')
+    return
   }
   let { uuid } = body.created
   debug(`Uploaded ID=${id} UUID=${uuid}`)
