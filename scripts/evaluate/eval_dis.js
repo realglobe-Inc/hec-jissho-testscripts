@@ -9,6 +9,7 @@ const fs = require('fs')
 const { join } = require('path')
 const evalReportExperiment = require('./helpers/eval_report_experiment')
 const jsonCsv = require('json-csv')
+const CSV_FIELDS = require('./src/csv_fields.json')
 
 function evalConAll () {
   return co(function * () {
@@ -27,48 +28,7 @@ function evalConAll () {
 
     let csv = yield new Promise((resolve, reject) => {
       jsonCsv.csvBuffered(allResult, {
-        fields: [
-          {
-            name: 'experiment.reportSpeed',
-            label: '通報(回/秒)'
-          },
-          {
-            name: 'experiment.browser',
-            label: 'ブラウザ数'
-          },
-          {
-            name: 'count.all',
-            label: '通報試行数'
-          },
-          {
-            name: 'count.success',
-            label: '通報到達数'
-          },
-          {
-            name: 'count.fail',
-            label: '通報到達失敗数'
-          },
-          {
-            name: 'stats.mean',
-            label: '平均秒'
-          },
-          {
-            name: 'stats.max',
-            label: '最大秒'
-          },
-          {
-            name: 'stats.min',
-            label: '最小秒'
-          },
-          {
-            name: 'stats.median',
-            label: '中央値'
-          },
-          {
-            name: 'stats.stdev',
-            label: '標準偏差'
-          }
-        ]
+        fields: CSV_FIELDS['DIS_REPORT']
       }, (err, csv) => err ? reject(err) : resolve(csv))
     })
     fs.writeFileSync(csvPath, csv)

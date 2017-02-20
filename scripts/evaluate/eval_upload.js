@@ -12,6 +12,7 @@ const co = require('co')
 const fs = require('fs')
 const { join } = require('path')
 const jsonCsv = require('json-csv')
+const CSV_FIELDS = require('./src/csv_fields.json')
 
 function evalUploadAll () {
   return co(function * () {
@@ -28,48 +29,7 @@ function evalUploadAll () {
 
     let csv = yield new Promise((resolve, reject) => {
       jsonCsv.csvBuffered(allResult, {
-        fields: [
-          {
-            name: 'experiment.post',
-            label: '1秒あたりの画像POST数'
-          },
-          {
-            name: 'experiment.size',
-            label: '画像サイズ'
-          },
-          {
-            name: 'count.all',
-            label: 'クライアントPOST試行数'
-          },
-          {
-            name: 'count.success',
-            label: 'クライアントPOST成功数'
-          },
-          {
-            name: 'count.fail',
-            label: 'クライアントPOST失敗数'
-          },
-          {
-            name: 'stats.mean',
-            label: '平均秒'
-          },
-          {
-            name: 'stats.max',
-            label: '最大秒'
-          },
-          {
-            name: 'stats.min',
-            label: '最小秒'
-          },
-          {
-            name: 'stats.median',
-            label: '中央値'
-          },
-          {
-            name: 'stats.stdev',
-            label: '標準偏差'
-          }
-        ]
+        fields: CSV_FIELDS['UPLOAD']
       }, (err, csv) => err ? reject(err) : resolve(csv))
     })
     fs.writeFileSync(csvPath, csv)

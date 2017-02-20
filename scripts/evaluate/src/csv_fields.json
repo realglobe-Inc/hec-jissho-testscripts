@@ -1,0 +1,86 @@
+{
+  "CON_REPORT": [
+    {
+      "name": "experiment.reporter",
+      "label": "通報クライアント数"
+    },
+    {
+      "name": "experiment.browser",
+      "label": "ブラウザ数"
+    },
+    {
+      "name": "count.all",
+      "label": "クライアント接続試行数"
+    },
+    {
+      "name": "count.success",
+      "label": "クライアント接続成功数"
+    },
+    {
+      "name": "count.fail",
+      "label": "クライアント接続失敗数"
+    },
+    {
+      "name": "stats.mean",
+      "label": "平均秒"
+    },
+    {
+      "name": "stats.max",
+      "label": "最大秒"
+    },
+    {
+      "name": "stats.min",
+      "label": "最小秒"
+    },
+    {
+      "name": "stats.median",
+      "label": "中央値"
+    },
+    {
+      "name": "stats.stdev",
+      "label": "標準偏差"
+    }
+  ],
+  "DIS_REPORT": [
+    {
+      "name": "experiment.post",
+      "label": "1秒あたりの画像POST数"
+    },
+    {
+      "name": "experiment.size",
+      "label": "画像サイズ"
+    },
+    {
+      "name": "count.all",
+      "label": "クライアントPOST試行数"
+    },
+    {
+      "name": "count.success",
+      "label": "クライアントPOST成功数"
+    },
+    {
+      "name": "count.fail",
+      "label": "クライアントPOST失敗数"
+    },
+    {
+      "name": "stats.mean",
+      "label": "平均秒"
+    },
+    {
+      "name": "stats.max",
+      "label": "最大秒"
+    },
+    {
+      "name": "stats.min",
+      "label": "最小秒"
+    },
+    {
+      "name": "stats.median",
+      "label": "中央値"
+    },
+    {
+      "name": "stats.stdev",
+      "label": "標準偏差"
+    }
+  ]
+}
