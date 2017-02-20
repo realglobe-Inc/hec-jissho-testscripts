@@ -1,0 +1,402 @@
+[
+  {
+    "experiment": {
+      "name": "upload_b_1_p_1_s_320x180",
+      "post": 1,
+      "size": "320x180"
+    },
+    "count": {
+      "all": 64,
+      "success": 64,
+      "fail": 0
+    },
+    "stats": {
+      "len": 64,
+      "mean": 0,
+      "max": 0,
+      "min": 0,
+      "median": 0,
+      "stdev": 0
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_1_s_1280x720",
+      "post": 1,
+      "size": "1280x720"
+    },
+    "count": {
+      "all": 64,
+      "success": 64,
+      "fail": 0
+    },
+    "stats": {
+      "len": 64,
+      "mean": 0.3,
+      "max": 1,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.46
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_1_s_1920x1080",
+      "post": 1,
+      "size": "1920x1080"
+    },
+    "count": {
+      "all": 64,
+      "success": 64,
+      "fail": 0
+    },
+    "stats": {
+      "len": 64,
+      "mean": 0.02,
+      "max": 1,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.12
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_1_s_4096x2160",
+      "post": 1,
+      "size": "4096x2160"
+    },
+    "count": {
+      "all": 64,
+      "success": 64,
+      "fail": 0
+    },
+    "stats": {
+      "len": 64,
+      "mean": 0.03,
+      "max": 1,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.17
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_10_s_320x180",
+      "post": 10,
+      "size": "320x180"
+    },
+    "count": {
+      "all": 735,
+      "success": 62,
+      "fail": 673
+    },
+    "stats": {
+      "len": 62,
+      "mean": 0,
+      "max": 0,
+      "min": 0,
+      "median": 0,
+      "stdev": 0
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_10_s_1280x720",
+      "post": 10,
+      "size": "1280x720"
+    },
+    "count": {
+      "all": 735,
+      "success": 735,
+      "fail": 0
+    },
+    "stats": {
+      "len": 735,
+      "mean": 0.09,
+      "max": 1,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.28
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_10_s_1920x1080",
+      "post": 10,
+      "size": "1920x1080"
+    },
+    "count": {
+      "all": 732,
+      "success": 731,
+      "fail": 1
+    },
+    "stats": {
+      "len": 731,
+      "mean": 0.21,
+      "max": 2,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.46
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_10_s_4096x2160",
+      "post": 10,
+      "size": "4096x2160"
+    },
+    "count": {
+      "all": 727,
+      "success": 726,
+      "fail": 1
+    },
+    "stats": {
+      "len": 726,
+      "mean": 1.2,
+      "max": 11,
+      "min": 0,
+      "median": 0,
+      "stdev": 2.58
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_20_s_320x180",
+      "post": 20,
+      "size": "320x180"
+    },
+    "count": {
+      "all": 1467,
+      "success": 155,
+      "fail": 1312
+    },
+    "stats": {
+      "len": 155,
+      "mean": 0.04,
+      "max": 1,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.19
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_20_s_1280x720",
+      "post": 20,
+      "size": "1280x720"
+    },
+    "count": {
+      "all": 1460,
+      "success": 1458,
+      "fail": 2
+    },
+    "stats": {
+      "len": 1458,
+      "mean": 0.09,
+      "max": 1,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.29
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_20_s_1920x1080",
+      "post": 20,
+      "size": "1920x1080"
+    },
+    "count": {
+      "all": 1410,
+      "success": 1123,
+      "fail": 287
+    },
+    "stats": {
+      "len": 1123,
+      "mean": 1.16,
+      "max": 10,
+      "min": 0,
+      "median": 0,
+      "stdev": 2.41
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_20_s_4096x2160",
+      "post": 20,
+      "size": "4096x2160"
+    },
+    "count": {
+      "all": 1448,
+      "success": 310,
+      "fail": 1138
+    },
+    "stats": {
+      "len": 310,
+      "mean": 0.15,
+      "max": 3,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.5
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_50_s_320x180",
+      "post": 50,
+      "size": "320x180"
+    },
+    "count": {
+      "all": 3641,
+      "success": 627,
+      "fail": 3014
+    },
+    "stats": {
+      "len": 627,
+      "mean": 0.05,
+      "max": 1,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.23
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_50_s_1280x720",
+      "post": 50,
+      "size": "1280x720"
+    },
+    "count": {
+      "all": 3630,
+      "success": 1979,
+      "fail": 1651
+    },
+    "stats": {
+      "len": 1979,
+      "mean": 0.3,
+      "max": 8,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.76
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_50_s_1920x1080",
+      "post": 50,
+      "size": "1920x1080"
+    },
+    "count": {
+      "all": 3630,
+      "success": 225,
+      "fail": 3405
+    },
+    "stats": {
+      "len": 225,
+      "mean": 0.08,
+      "max": 1,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.28
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_50_s_4096x2160",
+      "post": 50,
+      "size": "4096x2160"
+    },
+    "count": {
+      "all": 3639,
+      "success": 68,
+      "fail": 3571
+    },
+    "stats": {
+      "len": 68,
+      "mean": 0.12,
+      "max": 1,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.32
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_100_s_320x180",
+      "post": 100,
+      "size": "320x180"
+    },
+    "count": {
+      "all": 7221,
+      "success": 172,
+      "fail": 7049
+    },
+    "stats": {
+      "len": 172,
+      "mean": 0.03,
+      "max": 1,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.18
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_100_s_1280x720",
+      "post": 100,
+      "size": "1280x720"
+    },
+    "count": {
+      "all": 7218,
+      "success": 255,
+      "fail": 6963
+    },
+    "stats": {
+      "len": 255,
+      "mean": 0.05,
+      "max": 1,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.21
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_100_s_1920x1080",
+      "post": 100,
+      "size": "1920x1080"
+    },
+    "count": {
+      "all": 7215,
+      "success": 23,
+      "fail": 7192
+    },
+    "stats": {
+      "len": 23,
+      "mean": 0.09,
+      "max": 1,
+      "min": 0,
+      "median": 0,
+      "stdev": 0.28
+    }
+  },
+  {
+    "experiment": {
+      "name": "upload_b_1_p_100_s_4096x2160",
+      "post": 100,
+      "size": "4096x2160"
+    },
+    "count": {
+      "all": 7214,
+      "success": 4,
+      "fail": 7210
+    },
+    "stats": {
+      "len": 4,
+      "mean": 0.5,
+      "max": 1,
+      "min": 0,
+      "median": 0.5,
+      "stdev": 0.5
+    }
+  }
+]

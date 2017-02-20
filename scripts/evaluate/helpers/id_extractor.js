@@ -10,6 +10,24 @@ const extractor = ({test, matcher}) => (logBody = '') => {
   }
 }
 
+const extractUpload = (logBody = '') => {
+  if (/hec:rest:upload\sUpload\sID=/.test(logBody)) {
+    let id = /\sID=([0-9a-z.]+)/.exec(logBody)[1]
+    return {
+      state: 'start',
+      id
+    }
+  }
+  if (/hec:rest:upload\sUploaded\sID=/.test(logBody)) {
+    let id = /\sID=([0-9a-z.]+)/.exec(logBody)[1]
+    return {
+      state: 'finish',
+      id
+    }
+  }
+  return false
+}
+
 const reportPattern = /qq:reporter:([0-9#]+)/
 const photoPattern = /(\w+-\w+-\w+-\w+-\w+)/
 
@@ -21,31 +39,28 @@ const IdExtractor = {
     report: extractor({
       test: /Observer\srecieve\sreport/,
       matcher: reportPattern
-    }),
-    upload: extractor({
-      test: /INSERT\sINTO\s`photo`/,
-      matcher: photoPattern
     })
+    // upload: extractor({
+    //   test: /INSERT\sINTO\s`photo`/,
+    //   matcher: photoPattern
+    // })
   },
   client: {
     report: extractor({
       test: /REPORT_FULL_ID=/,
       matcher: reportPattern
     }),
-    upload: extractor({
-      test: /hec:rest:upload\sUpload/,
-      matcher: photoPattern
-    })
+    upload: extractUpload
   },
   browser: {
     report: extractor({
       test: /CONSOLE\sREPORT:/,
       matcher: reportPattern
-    }),
-    upload: extractor({
-      test: /CONSOLE\sPHOTO:/,
-      matcher: photoPattern
     })
+    // upload: extractor({
+    //   test: /CONSOLE\sPHOTO:/,
+    //   matcher: photoPattern
+    // })
   }
 }
 
