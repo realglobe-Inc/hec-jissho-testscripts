@@ -8,14 +8,12 @@ const co = require('co')
 const fs = require('fs')
 const { join } = require('path')
 const evalReportExperiment = require('./helpers/eval_report_experiment')
-const jsonCsv = require('json-csv')
-const CSV_FIELDS = require('./src/csv_fields.json')
+const vmstat = require('./helpers/vmstat')
 
 function evalConAll () {
   return co(function * () {
     const experiments = Experiments.DIS_REPORT
-    const jsonPath = join(__dirname, '../../results/disconnect_report.json')
-    const csvPath = join(__dirname, '../../results/disconnect_report.csv')
+    const jsonPath = join(__dirname, '../../results/report_disconnect.json')
 
     let allResult = []
     for (let exp of experiments) {
@@ -23,15 +21,11 @@ function evalConAll () {
       allResult.push(result)
     }
 
-    let json = JSON.stringify(allResult, null, '  ')
-    fs.writeFileSync(jsonPath, json)
+    console.log('Adding vmstat info to each result...')
+    let results = yield vmstat.addToResults(allResult)
 
-    let csv = yield new Promise((resolve, reject) => {
-      jsonCsv.csvBuffered(allResult, {
-        fields: CSV_FIELDS['DIS_REPORT']
-      }, (err, csv) => err ? reject(err) : resolve(csv))
-    })
-    fs.writeFileSync(csvPath, csv)
+    let json = JSON.stringify(results, null, '  ')
+    fs.writeFileSync(jsonPath, json)
   })
 }
 

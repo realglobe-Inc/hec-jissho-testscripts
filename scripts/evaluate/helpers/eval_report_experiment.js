@@ -32,32 +32,31 @@ function evalReportExperiment (experiment) {
 
     // 各通報について、clientでインスタンスを生成してから、最初に通報が到達するまでの時間を計測する
     // ミリ秒まではわからない
+    experiment.startAt = clientLog[0].date
+    experiment.endAt = clientLog[clientLog.length - 1].date
     let result = {
       experiment,
       count: {
         all: 0,
         success: 0,
         fail: 0
-      },
-      // seconds
-      rawData: []
+      }
     }
+    let rawData = []
     for (let clientData of clientLog) {
       let firstRecieve = browserLog.find(
         ({id, date}) => id === clientData.id
       )
       if (firstRecieve) {
         let time = firstRecieve.date - clientData.date
-        result.rawData.push(time / 1000)
+        rawData.push(time / 1000)
         result.count.success++
       } else {
         result.count.fail++
       }
     }
     result.count.all = result.count.success + result.count.fail
-    result.stats = stats(result.rawData)
-    // rawData は必要ない
-    delete result.rawData
+    result.stats = stats(rawData)
 
     return result
   })

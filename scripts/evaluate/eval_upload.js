@@ -11,28 +11,23 @@ const stats = require('./helpers/stats')
 const co = require('co')
 const fs = require('fs')
 const { join } = require('path')
-const jsonCsv = require('json-csv')
-const CSV_FIELDS = require('./src/csv_fields.json')
+const vmstat = require('./helpers/vmstat')
 
 function evalUploadAll () {
   return co(function * () {
     const jsonPath = join(__dirname, '../../results/upload.json')
-    const csvPath = join(__dirname, '../../results/upload.csv')
 
     let allResult = []
     for (let exp of Experiments.UPLOAD) {
       let result = yield evalUpload(exp)
       allResult.push(result)
     }
-    let json = JSON.stringify(allResult, null, '  ')
-    fs.writeFileSync(jsonPath, json)
 
-    let csv = yield new Promise((resolve, reject) => {
-      jsonCsv.csvBuffered(allResult, {
-        fields: CSV_FIELDS['UPLOAD']
-      }, (err, csv) => err ? reject(err) : resolve(csv))
-    })
-    fs.writeFileSync(csvPath, csv)
+    console.log('Adding vmstat info to each result...')
+    let results = yield vmstat.addToResults(allResult)
+
+    let json = JSON.stringify(results, null, '  ')
+    fs.writeFileSync(jsonPath, json)
   })
 }
 
@@ -52,6 +47,8 @@ function evalUpload (experiment) {
     let starts = clientLog.filter(data => data.id.state === 'start')
     let finishes = clientLog.filter(data => data.id.state === 'finish')
 
+    experiment.startAt = clientLog[0].date
+    experiment.endAt = clientLog[clientLog.length - 1].date
     let result = {
       experiment,
       count: {

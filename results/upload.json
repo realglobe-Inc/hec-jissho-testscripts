@@ -3,7 +3,9 @@
     "experiment": {
       "name": "upload_b_1_p_1_s_320x180",
       "post": 1,
-      "size": "320x180"
+      "size": "320x180",
+      "startAt": "2017-02-20T02:42:50.000Z",
+      "endAt": "2017-02-20T02:43:53.000Z"
     },
     "count": {
       "all": 64,
@@ -17,13 +19,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 2,
+        "memoryUsage": 1.4
+      },
+      "redis": {
+        "cpuUsage": 1,
+        "memoryUsage": 9.3
+      },
+      "db": {
+        "cpuUsage": 0,
+        "memoryUsage": 11.3
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_1_s_1280x720",
       "post": 1,
-      "size": "1280x720"
+      "size": "1280x720",
+      "startAt": "2017-02-17T10:10:46.000Z",
+      "endAt": "2017-02-17T10:11:50.000Z"
     },
     "count": {
       "all": 64,
@@ -37,13 +55,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.46
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 4,
+        "memoryUsage": 2.1
+      },
+      "redis": {
+        "cpuUsage": 0,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 1,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_1_s_1920x1080",
       "post": 1,
-      "size": "1920x1080"
+      "size": "1920x1080",
+      "startAt": "2017-02-17T10:12:13.000Z",
+      "endAt": "2017-02-17T10:13:16.000Z"
     },
     "count": {
       "all": 64,
@@ -57,13 +91,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.12
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 4,
+        "memoryUsage": 3.1
+      },
+      "redis": {
+        "cpuUsage": 1,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 0,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_1_s_4096x2160",
       "post": 1,
-      "size": "4096x2160"
+      "size": "4096x2160",
+      "startAt": "2017-02-17T10:13:40.000Z",
+      "endAt": "2017-02-17T10:14:43.000Z"
     },
     "count": {
       "all": 64,
@@ -77,13 +127,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.17
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 4,
+        "memoryUsage": 4.4
+      },
+      "redis": {
+        "cpuUsage": 0,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 0,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_10_s_320x180",
       "post": 10,
-      "size": "320x180"
+      "size": "320x180",
+      "startAt": "2017-02-17T10:15:09.000Z",
+      "endAt": "2017-02-17T10:16:32.000Z"
     },
     "count": {
       "all": 735,
@@ -97,13 +163,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 7,
+        "memoryUsage": 3.6
+      },
+      "redis": {
+        "cpuUsage": 0,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 1,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_10_s_1280x720",
       "post": 10,
-      "size": "1280x720"
+      "size": "1280x720",
+      "startAt": "2017-02-17T10:17:02.000Z",
+      "endAt": "2017-02-17T10:18:26.000Z"
     },
     "count": {
       "all": 735,
@@ -117,13 +199,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.28
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 14,
+        "memoryUsage": 6.2
+      },
+      "redis": {
+        "cpuUsage": 1,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 1,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_10_s_1920x1080",
       "post": 10,
-      "size": "1920x1080"
+      "size": "1920x1080",
+      "startAt": "2017-02-17T10:18:56.000Z",
+      "endAt": "2017-02-17T10:20:20.000Z"
     },
     "count": {
       "all": 732,
@@ -137,13 +235,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.46
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 21,
+        "memoryUsage": 18.5
+      },
+      "redis": {
+        "cpuUsage": 0,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 1,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_10_s_4096x2160",
       "post": 10,
-      "size": "4096x2160"
+      "size": "4096x2160",
+      "startAt": "2017-02-17T10:20:51.000Z",
+      "endAt": "2017-02-17T10:22:14.000Z"
     },
     "count": {
       "all": 727,
@@ -157,13 +271,29 @@
       "min": 0,
       "median": 0,
       "stdev": 2.58
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 35,
+        "memoryUsage": 33.9
+      },
+      "redis": {
+        "cpuUsage": 0,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 2,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_20_s_320x180",
       "post": 20,
-      "size": "320x180"
+      "size": "320x180",
+      "startAt": "2017-02-17T10:22:47.000Z",
+      "endAt": "2017-02-17T10:24:10.000Z"
     },
     "count": {
       "all": 1467,
@@ -177,13 +307,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.19
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 15,
+        "memoryUsage": 22.7
+      },
+      "redis": {
+        "cpuUsage": 0,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 0,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_20_s_1280x720",
       "post": 20,
-      "size": "1280x720"
+      "size": "1280x720",
+      "startAt": "2017-02-17T10:24:41.000Z",
+      "endAt": "2017-02-17T10:26:04.000Z"
     },
     "count": {
       "all": 1460,
@@ -197,13 +343,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.29
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 23,
+        "memoryUsage": 27.9
+      },
+      "redis": {
+        "cpuUsage": 1,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 2,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_20_s_1920x1080",
       "post": 20,
-      "size": "1920x1080"
+      "size": "1920x1080",
+      "startAt": "2017-02-17T10:26:35.000Z",
+      "endAt": "2017-02-17T10:27:58.000Z"
     },
     "count": {
       "all": 1410,
@@ -217,13 +379,29 @@
       "min": 0,
       "median": 0,
       "stdev": 2.41
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 58,
+        "memoryUsage": 52.1
+      },
+      "redis": {
+        "cpuUsage": 1,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 2,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_20_s_4096x2160",
       "post": 20,
-      "size": "4096x2160"
+      "size": "4096x2160",
+      "startAt": "2017-02-17T10:28:29.000Z",
+      "endAt": "2017-02-17T10:29:53.000Z"
     },
     "count": {
       "all": 1448,
@@ -237,13 +415,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.5
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 67,
+        "memoryUsage": 52.2
+      },
+      "redis": {
+        "cpuUsage": 1,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 1,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_50_s_320x180",
       "post": 50,
-      "size": "320x180"
+      "size": "320x180",
+      "startAt": "2017-02-17T10:30:23.000Z",
+      "endAt": "2017-02-17T10:31:46.000Z"
     },
     "count": {
       "all": 3641,
@@ -257,13 +451,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.23
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 37,
+        "memoryUsage": 43.4
+      },
+      "redis": {
+        "cpuUsage": 1,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 3,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_50_s_1280x720",
       "post": 50,
-      "size": "1280x720"
+      "size": "1280x720",
+      "startAt": "2017-02-17T10:32:17.000Z",
+      "endAt": "2017-02-17T10:33:40.000Z"
     },
     "count": {
       "all": 3630,
@@ -277,13 +487,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.76
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 55,
+        "memoryUsage": 51.5
+      },
+      "redis": {
+        "cpuUsage": 1,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 3,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_50_s_1920x1080",
       "post": 50,
-      "size": "1920x1080"
+      "size": "1920x1080",
+      "startAt": "2017-02-17T10:34:11.000Z",
+      "endAt": "2017-02-17T10:35:35.000Z"
     },
     "count": {
       "all": 3630,
@@ -297,13 +523,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.28
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 53,
+        "memoryUsage": 51
+      },
+      "redis": {
+        "cpuUsage": 0,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 2,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_50_s_4096x2160",
       "post": 50,
-      "size": "4096x2160"
+      "size": "4096x2160",
+      "startAt": "2017-02-17T10:36:05.000Z",
+      "endAt": "2017-02-17T10:37:28.000Z"
     },
     "count": {
       "all": 3639,
@@ -317,13 +559,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.32
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 31,
+        "memoryUsage": 51.1
+      },
+      "redis": {
+        "cpuUsage": 1,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 1,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_100_s_320x180",
       "post": 100,
-      "size": "320x180"
+      "size": "320x180",
+      "startAt": "2017-02-17T10:37:59.000Z",
+      "endAt": "2017-02-17T10:39:22.000Z"
     },
     "count": {
       "all": 7221,
@@ -337,13 +595,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.18
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 31,
+        "memoryUsage": 50.7
+      },
+      "redis": {
+        "cpuUsage": 0,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 1,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_100_s_1280x720",
       "post": 100,
-      "size": "1280x720"
+      "size": "1280x720",
+      "startAt": "2017-02-17T10:39:53.000Z",
+      "endAt": "2017-02-17T10:41:16.000Z"
     },
     "count": {
       "all": 7218,
@@ -357,13 +631,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.21
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 39,
+        "memoryUsage": 51.4
+      },
+      "redis": {
+        "cpuUsage": 1,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 0,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_100_s_1920x1080",
       "post": 100,
-      "size": "1920x1080"
+      "size": "1920x1080",
+      "startAt": "2017-02-17T10:41:46.000Z",
+      "endAt": "2017-02-17T10:43:10.000Z"
     },
     "count": {
       "all": 7215,
@@ -377,13 +667,29 @@
       "min": 0,
       "median": 0,
       "stdev": 0.28
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 21,
+        "memoryUsage": 51.5
+      },
+      "redis": {
+        "cpuUsage": 1,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 0,
+        "memoryUsage": 11.2
+      }
     }
   },
   {
     "experiment": {
       "name": "upload_b_1_p_100_s_4096x2160",
       "post": 100,
-      "size": "4096x2160"
+      "size": "4096x2160",
+      "startAt": "2017-02-17T10:43:40.000Z",
+      "endAt": "2017-02-17T10:45:04.000Z"
     },
     "count": {
       "all": 7214,
@@ -397,6 +703,20 @@
       "min": 0,
       "median": 0.5,
       "stdev": 0.5
+    },
+    "vmstat": {
+      "app": {
+        "cpuUsage": 32,
+        "memoryUsage": 51
+      },
+      "redis": {
+        "cpuUsage": 0,
+        "memoryUsage": 10.3
+      },
+      "db": {
+        "cpuUsage": 0,
+        "memoryUsage": 11.2
+      }
     }
   }
 ]
