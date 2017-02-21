@@ -12,7 +12,7 @@ const {
   // 1秒あたりのPOST回数
   POSTS_PAR_SECOND = 1,
   // 画像投稿数
-  COUNT = 1000,
+  COUNT = 5000,
   // 画像サイズ
   IMG_SIZE = '320x180'
 } = process.env
@@ -29,23 +29,27 @@ const debug = require('debug')('hec:rest:upload')
 // Settings
 let request = arequest.create({ jar: true })
 let imgPath = join(__dirname, `../misc/img/${IMG_SIZE}.jpg`)
+let image = fs.readFileSync(imgPath)
 let pathname = `/jissho3/rest/cameras/${CAMERA_UUID}/photos`
 let createPhoto = () => co(function * () {
+  let id = Math.random().toString(36).slice(-20)
+  debug(`Upload ID=${id}`)
   let { statusCode, body } = yield request({
     url: `${BASE_URL}${pathname}`,
     method: 'POST',
     formData: {
       info: JSON.stringify({}),
       token: CAMERA_TOKEN,
-      image: fs.createReadStream(imgPath),
+      image,
       extension: '.jpg'
     }
   })
   if (statusCode !== 201) {
-    throw new Error(`Failed to create: ${JSON.stringify(body)} (at: ${pathname}, status code: ${statusCode})`)
+    debug('Failed')
+    return
   }
   let { uuid } = body.created
-  debug(`Photo uploaded ${uuid}.`)
+  debug(`Uploaded ID=${id} UUID=${uuid}`)
 }).catch(handleError)
 
 // Upload images
@@ -56,10 +60,8 @@ co(function * () {
     createPhoto() // Not yield
     yield asleep(INTERVAL)
   }
-  debug('Finish uploading.')
 }).catch(handleError)
 
 function handleError (err) {
   console.error(err)
-  process.exit(1)
 }

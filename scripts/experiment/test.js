@@ -33,7 +33,7 @@ const Presets = {
     return [
       'mkdir -p log',
       `(node ${path} &> log/${logName} &)`,
-      'sleep 2'
+      'sleep 4'
     ]
   },
   launchApp: (logName) => Presets._launch('hec-jissho3/bin/app.js', logName),
@@ -56,20 +56,22 @@ const appEnv = () => concatEnv([
   ['RG_GOOGLE_API_KEY', 'AIzaSyDnz3rIxZIUlyqpz4q0wVAJEBEv9uZcy1o'],
   ['PATH', '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/rg_fuji/node-v6.9.5-linux-x64/bin']
 ])
+const BASE_URL = `http://${Ip.APP[0]}`
 const disReportEnv = (reportPerSec) => concatEnv([
-  ['BASE_URL', `http://${Ip.APP[0]}`],
+  ['BASE_URL', BASE_URL],
   ['REPORT_PER_SECOND', reportPerSec]
 ])
 const conReportEnv = (reporters) => concatEnv([
-  ['BASE_URL', `http://${Ip.APP[0]}`],
+  ['BASE_URL', BASE_URL],
   ['REPORTERS', reporters]
 ])
 const uploadEnv = (postPerSecond, imgSize) => concatEnv([
+  ['BASE_URL', BASE_URL],
   ['POSTS_PAR_SECOND', postPerSecond],
   ['IMG_SIZE', imgSize]
 ])
 const browserEnv = (browsers) => concatEnv([
-  ['BASE_URL', `http://${Ip.APP[0]}`],
+  ['BASE_URL', BASE_URL],
   ['PATH', `\\$PATH:/home/rg_fuji/hec-jissho-testscripts/phantom/bin`],
   ['BROWSERS', browsers]
 ])
@@ -88,6 +90,8 @@ function resetApp (logName) {
   let commands = [
     appEnv(),
     ...Presets.clean(),
+    'sleep 5',
+    'rm hec-jissho3/server/public/uploaded/photos/35f0c2f6-dc0d-459e-b5b8-c579de229697/*',
     'node hec-jissho3/ci/db/db_seed.js', // DB
     `redis-cli -h ${Ip.REDIS[0]} flushall`, // Redis
     ...Presets.launchApp(logName)
@@ -104,10 +108,12 @@ function experimentDisReport (config) {
   const logName = `disreport_b_${browsers}_r_${reportPerSec}_${salt}.log`
   const clientConf = reportPerSec > 1 ? {
     ips: Ip.CLIENTS,
-    env: disReportEnv(reportPerSec / 5)
+    env: disReportEnv(reportPerSec / 5),
+    launcher: Presets.launchDisReport(logName)
   } : {
     ips: Ip.A_CLIENT,
-    env: disReportEnv(1)
+    env: disReportEnv(1),
+    launcher: Presets.launchDisReport(logName)
   }
   experiment({
     logName,
@@ -186,7 +192,7 @@ function experiment (conf) {
     [browserConf.env, ...Presets.launchBrowser(logName)]
   )
 
-  debug('Setup uplorders')
+  debug('Setup clients')
   sshCommand(
     clientConf.ips,
     [clientConf.env, ...clientConf.launcher]
@@ -213,7 +219,12 @@ function execute () {
     let reportPerSecSet = [1, 10, 20, 30, 40, 50, 100]
     for (let browsers of browsersSet) {
       for (let reportPerSec of reportPerSecSet) {
-        experimentDisReport({ browsers, reportPerSec })
+        try {
+          experimentDisReport({ browsers, reportPerSec })
+        } catch (e) {
+          console.error(e)
+          continue
+        }
       }
     }
   }
@@ -222,20 +233,30 @@ function execute () {
     let browsersSet = [1, 10, 50, 100, 150, 200, 500]
     let reportsSet = [100, 200, 500, 1000, 2000, 5000]
     for (let browsers of browsersSet) {
-      for (let reports of reportsSet) {
-        experimentConReport({ browsers, reports })
+      for (let reporters of reportsSet) {
+        try {
+          experimentConReport({ browsers, reporters })
+        } catch (e) {
+          console.error(e)
+          continue
+        }
       }
     }
   }
   // upload
   {
-    let browsersSet = [1, 10, 50, 100, 150, 200, 500]
+    let browsersSet = [1]
     let postsSet = [1, 10, 20, 50, 100]
-    let sizeSet = ['320×180', '1280x720', '1920×1080', '4096×2160']
+    let sizeSet = ['320x180', '1280x720', '1920x1080', '4096x2160']
     for (let browsers of browsersSet) {
       for (let postPerSecond of postsSet) {
         for (let imgSize of sizeSet) {
-          experimentUpload({ browsers, postPerSecond, imgSize })
+          try {
+            experimentUpload({ browsers, postPerSecond, imgSize })
+          } catch (e) {
+            console.error(e)
+            continue
+          }
         }
       }
     }

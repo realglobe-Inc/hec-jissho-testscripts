@@ -1,0 +1,90 @@
+{
+  "common": [
+    {
+      "name": "count.all",
+      "label": "クライアント試行数"
+    },
+    {
+      "name": "count.success",
+      "label": "クライアント試行成功数"
+    },
+    {
+      "name": "count.fail",
+      "label": "クライアント試行失敗数"
+    },
+    {
+      "name": "stats.mean",
+      "label": "平均秒"
+    },
+    {
+      "name": "stats.max",
+      "label": "最大秒"
+    },
+    {
+      "name": "stats.min",
+      "label": "最小秒"
+    },
+    {
+      "name": "stats.median",
+      "label": "中央値"
+    },
+    {
+      "name": "stats.stdev",
+      "label": "標準偏差"
+    },
+    {
+      "name": "vmstat.app.cpuUsage",
+      "label": "CPU使用率(App)"
+    },
+    {
+      "name": "vmstat.app.memoryUsage",
+      "label": "メモリ使用率(App)"
+    },
+    {
+      "name": "vmstat.redis.cpuUsage",
+      "label": "CPU使用率(Redis)"
+    },
+    {
+      "name": "vmstat.redis.memoryUsage",
+      "label": "メモリ使用率(Redis)"
+    },
+    {
+      "name": "vmstat.db.cpuUsage",
+      "label": "CPU使用率(DB)"
+    },
+    {
+      "name": "vmstat.db.memoryUsage",
+      "label": "メモリ使用率(DB)"
+    }
+  ],
+  "report_connect": [
+    {
+      "name": "experiment.reporter",
+      "label": "通報クライアント数"
+    },
+    {
+      "name": "experiment.browser",
+      "label": "ブラウザ数"
+    }
+  ],
+  "report_disconnect": [
+    {
+      "name": "experiment.reportSpeed",
+      "label": "通報（回／秒）"
+    },
+    {
+      "name": "experiment.browser",
+      "label": "ブラウザ数"
+    }
+  ],
+  "upload": [
+    {
+      "name": "experiment.post",
+      "label": "画像POST（回／秒）"
+    },
+    {
+      "name": "experiment.size",
+      "label": "画像サイズ"
+    }
+  ]
+}
